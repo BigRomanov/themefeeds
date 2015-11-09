@@ -1,0 +1,31 @@
+<md-card ng-repeat="feed in feeds" style="width:400px;padding:20px;float:left;margin-right:20px;margin-bottom:20px">
+  <h2 class="md-title" style="font-size:14px;font-weight:800">{{feed.title}}</h2>
+  <img ng-src="/img/poker-bg-1.jpg" class="md-card-image">
+  <md-card-content>
+    <img ng-src="{{feed.img}}" >
+  </md-card-content>
+  <md-card-actions layout="row" layout-align="end center">
+    <md-checkbox ng-model="feed.selected" aria-label="Select">
+          Select
+        </md-checkbox>
+  </md-card-actions>
+</md-card>
+
+
+<!-- <md-grid-list md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px">
+  <md-grid-tile ng-repeat="feed in feeds" class="feed_tile" md-rowspan="2" md-colspan="2" md-colspan-sm="1">
+    <md-card>
+      <img ng-src="{{feed.img}}" class="md-card-image" alt="Washed Out">
+      <md-card-content>
+        <h2 class="md-title">{{feed.title}}</h2>
+      </md-card-content>
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button>Action 1</md-button>
+        <md-button>Action 2</md-button>
+      </md-card-actions>
+    </md-card>
+        <md-grid-tile-footer>
+      <h3>{{feed.title}}</h3>
+    </md-grid-tile-footer>
+  </md-grid-tile>
+</md-grid-list> -->
