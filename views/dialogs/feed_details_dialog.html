@@ -1,0 +1,28 @@
+<md-dialog aria-label="Mango (Fruit)" ng-cloak>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <img ng-src="{{feed.logo}}" class="feed-card-logo">
+      <h2>{{feed.title}}</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel()">
+        <md-icon md-svg-src="img/ic_close_white_24px.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content style="max-width:800px;max-height:810px;">
+    <div class="md-dialog-content" layout="row">
+      <div style="width:45%;margin-right:5%;line-height:24px">{{feed.description}}</div>
+      <div style="width:50%">
+        <img style="margin: auto; max-width: 100%;" alt="Lush mango tree" src="img/poker-bg-1.jpg">
+      </div>
+    </div>
+  </md-dialog-content>
+  <md-dialog-actions layout="row" style="padding:18px">
+    <md-checkbox style="line-height:32px" ng-hide="feed.selected" ng-model="feed.selected" aria-label="Select">Add</md-checkbox>
+    <md-checkbox style="line-height:32px" ng-show="feed.selected" ng-model="feed.selected" aria-label="Select">Remove</md-checkbox>
+    <span flex></span>
+    <md-button ng-href="{{feed.url}}" target="_blank" md-autofocus>
+      View website
+    </md-button>
+  </md-dialog-actions>
+</md-dialog>

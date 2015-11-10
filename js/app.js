@@ -1,5 +1,5 @@
 var app = angular.module('feedsApp', ['ngRoute', 'ngResource', 'ngCookies', 'ngSanitize', 'ngMessages',
-  'ngMaterial', 'contenteditable', 'angularMoment']);
+  'ngMaterial', 'contenteditable', 'angularMoment', 'dibari.angular-ellipsis']);
 
 app.config(['$routeProvider', '$httpProvider',
   function($routeProvider, $httpProvider) {

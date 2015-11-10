@@ -1,3 +1,51 @@
-.feed_tile {
-	background-color: #ceffee;
+.feed-card {
+  width: 240px;
+  padding: 10px;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px
+}
+
+.feed-card-header {
+  margin-bottom: 10px;
+}
+
+.feed-card-title {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: -0.04em;
+  line-height: 30px;
+  overflow: hidden;
+  text-transform: capitalize;
+  cursor: pointer;
+  padding-top: 2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #494949;
+  text-decoration: none;
+}
+
+.feed-card-title:hover {
+  text-decoration: underline;
+}
+
+.feed-card-logo {
+  float: left;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.feed-card-body {
+  height: 80px;
+}
+
+.feed-card-description {
+  width: 100%;
+  height: 80px;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  overflow: ellipsis;
+  color: #494949;
 }

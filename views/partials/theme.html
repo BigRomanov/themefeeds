@@ -1,31 +1,28 @@
-<md-card ng-repeat="feed in feeds" style="width:400px;padding:20px;float:left;margin-right:20px;margin-bottom:20px">
-  <h2 class="md-title" style="font-size:14px;font-weight:800">{{feed.title}}</h2>
-  <img ng-src="/img/poker-bg-1.jpg" class="md-card-image">
-  <md-card-content>
-    <img ng-src="{{feed.img}}" >
-  </md-card-content>
-  <md-card-actions layout="row" layout-align="end center">
-    <md-checkbox ng-model="feed.selected" aria-label="Select">
-          Select
-        </md-checkbox>
-  </md-card-actions>
-</md-card>
+<div layout="row">
+  <md-input-container style="width:90%">
+    <label>Enter your email address to subscribe to selected feeds</label>
+    <input ng-model="user.email" type="email">
+  </md-input-container>
+  <p flex></p>
+  <md-button class="md-no-ink md-primary" class="md-primary" style="width:120px;margin-top:16px;margin-bottom:16px">Subscribe</md-button>
+</div>
+<div>
+  <md-card ng-repeat="feed in feeds" class="feed-card" ng-click="showDetails(feed, $event)">
+    <md-card-content layout="column">
+      <div class="feed-card-header">
+        <img ng-src="{{feed.logo}}" class="feed-card-logo">
+        <div class="feed-card-title">{{feed.title}}</div>
+      </div>
+      <div class="feed-card-body">
+        <div class="feed-card-description" ng-bind="feed.description" data-ellipsis></div>
+      </div>
+      <!-- <md-button style="width:100%" class="md-primary" aria-label="Add">Add
+      </md-button>   -->
+      <div layout="row" layout-align="center center">
+        <md-checkbox ng-hide="feed.selected" ng-model="feed.selected" aria-label="Select">Add</md-checkbox>
+        <md-checkbox ng-show="feed.selected" ng-model="feed.selected" aria-label="Select">Remove</md-checkbox>    
+      </div>
+    </md-card-content>
 
-
-<!-- <md-grid-list md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px">
-  <md-grid-tile ng-repeat="feed in feeds" class="feed_tile" md-rowspan="2" md-colspan="2" md-colspan-sm="1">
-    <md-card>
-      <img ng-src="{{feed.img}}" class="md-card-image" alt="Washed Out">
-      <md-card-content>
-        <h2 class="md-title">{{feed.title}}</h2>
-      </md-card-content>
-      <md-card-actions layout="row" layout-align="end center">
-        <md-button>Action 1</md-button>
-        <md-button>Action 2</md-button>
-      </md-card-actions>
-    </md-card>
-        <md-grid-tile-footer>
-      <h3>{{feed.title}}</h3>
-    </md-grid-tile-footer>
-  </md-grid-tile>
-</md-grid-list> -->
+  </md-card>
+</div>
