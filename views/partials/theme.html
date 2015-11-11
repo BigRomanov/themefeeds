@@ -1,28 +1,27 @@
 <div layout="row">
   <md-input-container style="width:90%">
     <label>Enter your email address to subscribe to selected feeds</label>
-    <input ng-model="user.email" type="email">
+    <input autofocus required type="email" name="email" ng-model="email" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/"></input>
   </md-input-container>
   <p flex></p>
-  <md-button class="md-no-ink md-primary" class="md-primary" style="width:120px;margin-top:16px;margin-bottom:16px">Subscribe</md-button>
+  <md-button ng-disabled="!validateEmail()" class="md-primary" ng-click="subscribe()" style="width:120px;margin-top:16px;margin-bottom:16px">Subscribe</md-button>
 </div>
 <div>
   <md-card ng-repeat="feed in feeds" class="feed-card" ng-click="showDetails(feed, $event)">
     <md-card-content layout="column">
       <div class="feed-card-header">
-        <img ng-src="{{feed.logo}}" class="feed-card-logo">
-        <div class="feed-card-title">{{feed.title}}</div>
+        <img ng-src="{{feed.Logo}}" class="feed-card-logo">
+        <div class="feed-card-title">{{feed.Title}}</div>
       </div>
       <div class="feed-card-body">
-        <div class="feed-card-description" ng-bind="feed.description" data-ellipsis></div>
+        <div class="feed-card-description" ng-bind="feed.Description" data-ellipsis></div>
       </div>
       <!-- <md-button style="width:100%" class="md-primary" aria-label="Add">Add
       </md-button>   -->
       <div layout="row" layout-align="center center">
         <md-checkbox ng-hide="feed.selected" ng-model="feed.selected" aria-label="Select">Add</md-checkbox>
-        <md-checkbox ng-show="feed.selected" ng-model="feed.selected" aria-label="Select">Remove</md-checkbox>    
+        <md-checkbox ng-show="feed.selected" ng-model="feed.selected" aria-label="Select">Remove</md-checkbox>
       </div>
     </md-card-content>
-
   </md-card>
 </div>
